@@ -96,7 +96,7 @@ func main() {
 		os.Exit(0)
 	}()
 
-	// Loop indefitely, periodically checking for pod events
+	// Loop indefinetly, periodically checking for pod events
 	for {
 		// Get pods
 		podList, err := podsClient.List(context.TODO(), metav1.ListOptions{})
