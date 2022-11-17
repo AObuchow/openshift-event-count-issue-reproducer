@@ -93,7 +93,6 @@ func main() {
 	go func() {
 		<-c
 		cleanupAndExit(deploymentsClient)
-		os.Exit(0)
 	}()
 
 	// Loop indefinetly, periodically checking for pod events
@@ -143,6 +142,7 @@ func main() {
 func cleanupAndExit(deploymentsClient v1.DeploymentInterface) {
 	deleteDeployment(deploymentsClient)
 	fmt.Println("Exiting.")
+	os.Exit(0)
 }
 
 func deleteDeployment(deploymentsClient v1.DeploymentInterface) {
